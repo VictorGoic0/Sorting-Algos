@@ -1,6 +1,4 @@
-# TO-DO: Complete the selection_sort() function below 
 def selection_sort(arr):
-    # loop through n-1 elements
     for i in range(0, len(arr) - 1):
         current = arr[i]
         smallest = current
@@ -9,14 +7,18 @@ def selection_sort(arr):
             if (arr[j] < smallest):
                 smallest = arr[j]
                 smallest_index = j
-        arr[i] = smallest
-        arr[smallest_index] = current
+        arr[i], arr[smallest_index] = smallest, current
     return arr
 
 
-# TO-DO:  implement the Bubble Sort function below
-def bubble_sort( arr ):
-
+def bubble_sort(arr):
+    boolean = True
+    while boolean:
+        boolean = False
+        for i in range(1, len(arr)):
+            if arr[i] < arr[i-1]:
+                arr[i], arr[i-1] = arr[i-1], arr[i]
+                boolean = True
     return arr
 
 
